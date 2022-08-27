@@ -53,6 +53,54 @@ Namespace My
                 Return defaultInstance
             End Get
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property OnlyMe() As Boolean
+            Get
+                Return CType(Me("OnlyMe"),Boolean)
+            End Get
+            Set
+                Me("OnlyMe") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property Espanglish() As String
+            Get
+                Return CType(Me("Espanglish"),String)
+            End Get
+            Set
+                Me("Espanglish") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property OfflineMode() As Boolean
+            Get
+                Return CType(Me("OfflineMode"),Boolean)
+            End Get
+            Set
+                Me("OfflineMode") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property ContextMenuShellWindows() As Boolean
+            Get
+                Return CType(Me("ContextMenuShellWindows"),Boolean)
+            End Get
+            Set
+                Me("ContextMenuShellWindows") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
@@ -64,9 +112,9 @@ Namespace My
     Friend Module MySettingsProperty
         
         <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")>  _
-        Friend ReadOnly Property Settings() As Global.Wor_File_Box.My.MySettings
+        Friend ReadOnly Property Settings() As Global.Wor_FileBox.My.MySettings
             Get
-                Return Global.Wor_File_Box.My.MySettings.Default
+                Return Global.Wor_FileBox.My.MySettings.Default
             End Get
         End Property
     End Module

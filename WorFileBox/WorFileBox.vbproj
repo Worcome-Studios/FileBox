@@ -1,21 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F6E485E6-B9B4-47BE-8B71-177F6C5BD157}</ProjectGuid>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E731E02C-96EE-47F3-BFBC-B481011CF356}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>Wor_File_Box.My.MyApplication</StartupObject>
-    <RootNamespace>Wor_File_Box</RootNamespace>
+    <StartupObject>Wor_FileBox.My.MyApplication</StartupObject>
+    <RootNamespace>Wor_FileBox</RootNamespace>
     <AssemblyName>WorFileBox</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Worcome\Desktop\Wor FileBox\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <SupportUrl></SupportUrl>
+    <ErrorReportUrl></ErrorReportUrl>
+    <TargetCulture>es</TargetCulture>
+    <ProductName>Wor FileBox</ProductName>
+    <PublisherName>Worcome Studios</PublisherName>
+    <SuiteName>Worcome Apps</SuiteName>
+    <ApplicationRevision>19</ApplicationRevision>
+    <ApplicationVersion>08.09.20.19</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <DefineDebug>true</DefineDebug>
@@ -23,9 +49,10 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DocumentationFile>WorFileBox.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <DefineDebug>false</DefineDebug>
     <DefineTrace>true</DefineTrace>
@@ -33,6 +60,7 @@
     <OutputPath>bin\Release\</OutputPath>
     <DocumentationFile>WorFileBox.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <OptionExplicit>On</OptionExplicit>
@@ -46,7 +74,30 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>FileBox.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>A0AEDC89E53E413688A0DE84F6A6651CB52E1CD1</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Wor FileBox_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FastColoredTextBox">
+      <HintPath>..\..\..\FastColoredTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -56,6 +107,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -70,6 +122,81 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About.Designer.vb">
+      <DependentUpon>About.vb</DependentUpon>
+    </Compile>
+    <Compile Include="About.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActionConfirm.designer.vb">
+      <DependentUpon>ActionConfirm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ActionConfirm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppHelper.designer.vb">
+      <DependentUpon>AppHelper.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppHelper.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppService.vb" />
+    <Compile Include="AppSupport.designer.vb">
+      <DependentUpon>AppSupport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppSupport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppUpdate.designer.vb">
+      <DependentUpon>AppUpdate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppUpdate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BackUp.Designer.vb">
+      <DependentUpon>BackUp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BackUp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeCryptoKey.Designer.vb">
+      <DependentUpon>ChangeCryptoKey.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeCryptoKey.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CryptoActions.Designer.vb">
+      <DependentUpon>CryptoActions.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CryptoActions.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Debugger.designer.vb">
+      <DependentUpon>Debugger.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Debugger.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FastCipher.Designer.vb">
+      <DependentUpon>FastCipher.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FastCipher.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FileBox.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FileBox.Designer.vb">
+      <DependentUpon>FileBox.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Idioma.vb" />
+    <Compile Include="LangSelector.designer.vb">
+      <DependentUpon>LangSelector.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LangSelector.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -85,16 +212,73 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="SignIN.designer.vb">
+      <DependentUpon>SignIN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SignIN.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SignUP.Designer.vb">
+      <DependentUpon>SignUP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SignUP.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActionConfirm.resx">
+      <DependentUpon>ActionConfirm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppHelper.resx">
+      <DependentUpon>AppHelper.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppSupport.resx">
+      <DependentUpon>AppSupport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppUpdate.resx">
+      <DependentUpon>AppUpdate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BackUp.resx">
+      <DependentUpon>BackUp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangeCryptoKey.resx">
+      <DependentUpon>ChangeCryptoKey.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CryptoActions.resx">
+      <DependentUpon>CryptoActions.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Debugger.resx">
+      <DependentUpon>Debugger.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FastCipher.resx">
+      <DependentUpon>FastCipher.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FileBox.resx">
+      <DependentUpon>FileBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LangSelector.resx">
+      <DependentUpon>LangSelector.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="SignIN.resx">
+      <DependentUpon>SignIN.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SignUP.resx">
+      <DependentUpon>SignUP.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
+    <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -105,5 +289,53 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apply-32.png" />
+    <None Include="Resources\Ball-info-32.png" />
+    <None Include="Resources\Button-Close-icon.png" />
+    <None Include="Resources\Files-Edit-file-icon.png" />
+    <None Include="Resources\Folder-48.png" />
+    <None Include="Resources\New-32.png" />
+    <None Include="Resources\Save-32.png" />
+    <None Include="Resources\Worcome Corp PLN.png" />
+    <None Include="Resources\Flecha Der.png" />
+    <None Include="Resources\refresh-512.png" />
+    <None Include="Resources\Paste-32.png" />
+    <None Include="Resources\Search.png" />
+    <None Include="Resources\codigo-binario_318-46836.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FileBox.ico" />
+    <None Include="Resources\SistemTrail.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
 </Project>
